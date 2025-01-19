@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchverwaltung für Claudia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>📚 Bücherliste für Claudia ❤️❤️</h1>
+        
+        <!-- Button zum Hinzufügen eines neuen Buches -->
+        <button id="add-book-button">Neues Buch hinzufügen</button>
+        
+        <!-- Formular bleibt verborgen -->
+        <form id="book-form" style="display: none;">
+            <label for="title">Buchtitel:</label>
+            <input type="text" id="title" name="title" required>
+            <button type="button" id="fetch-book-info">Buchinformationen abrufen</button>
+            
+            <label for="author">Autor:</label>
+            <input type="text" id="author" name="author" required>
+            <input type="hidden" id="coverUrl" name="coverUrl">
+            <button type="submit">Buch hinzufügen</button>
+        </form>
+
+        <div class="search-filter">
+            <div class="search-container">
+                <label for="search">Bücher durchsuchen:</label>
+                <input type="text" id="search" placeholder="Nach Titel oder Autor suchen...">
+            </div>
+
+            <div class="filter-container">
+                <label for="filter-genre">Genre filtern:</label>
+                <select id="filter-genre">
+                    <option value="all">Alle</option>
+                    <option value="fiction">Fiktion</option>
+                    <option value="non-fiction">Sachbuch</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="biography">Biografie</option>
+                    <option value="science-fiction">Science Fiction</option>
+                    <option value="mystery">Krimi</option>
+                    <option value="others">Andere</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="book-list" class="book-grid">
+            <!-- Bücher werden hier als Karten angezeigt -->
+        </div>
+
+        <!-- Button zum Anzeigen der Statistiken -->
+        <button id="toggle-stats-button">Statistiken zeigen</button>
+
+        <!-- Statistiken bleiben verborgen -->
+        <div id="stats" style="display: none;">
+            <h2>Statistiken</h2>
+            <p id="total-books">Gesamtanzahl der Bücher: 0</p>
+            <p id="books-by-genre">Bücher pro Genre:</p>
+            <ul id="genre-stats">
+                <li>Fiktion: <span id="fiction-count">0</span></li>
+                <li>Sachbuch: <span id="non-fiction-count">0</span></li>
+                <li>Fantasy: <span id="fantasy-count">0</span></li>
+                <li>Biografie: <span id="biography-count">0</span></li>
+                <li>Science Fiction: <span id="science-fiction-count">0</span></li>
+                <li>Krimi: <span id="mystery-count">0</span></li>
+                <li>Andere: <span id="others-count">0</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
